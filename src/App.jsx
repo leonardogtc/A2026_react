@@ -6,6 +6,7 @@ import Primeiro from './components/basicos/Primeiro';
 import ComParametro from './components/basicos/ComParametro';
 import Fragmento from './components/basicos/Fragmento';
 import Aleatorio from "./components/basicos/Aleatorio";
+import Card from "./components/layout/Card"
 
 // 3. Uma expressão JSX (semelhante ao HTML) pode ser armazenada em uma constante ou variável
 // e depois utilizada na renderização dentro de outro JSX usando chaves: `{tag}`.
@@ -23,23 +24,33 @@ export default () => (
     <div id="app">
         <h1>Fundamentos React</h1>
 
-        {/* Passamos os parâmetros `min` e `max` via props para definir o intervalo do sorteio */}
-        <Aleatorio min={1} max={60} />
+        <Card titulo="#05 - Desafio Aleatório">
+            {/* Passamos os parâmetros `min` e `max` via props para definir o intervalo do sorteio */}
+            <Aleatorio min={1} max={60} />
+        </Card>
 
-        {/* Interpola a constante `tag` definida acima usando chaves `{}` */}
-        {tag}
-
-        {/* Renderiza o componente <Fragmento />. No HTML final (dentro de <div id="app">),
+        <Card titulo="#04 - Fragmento">
+            {/* Renderiza o componente <Fragmento />. No HTML final (dentro de <div id="app">),
             o <h2> e o <h4> dele serão inseridos diretamente, sem nenhuma <div> intermediária envolvendo eles. */}
-        <Fragmento />
+            <Fragmento />
+        </Card>
 
-        {/* Reutilizamos o mesmo componente <ComParametro /> passando valores diferentes via propriedades (props).
+        <Card titulo="#03 - Com Parâmetros">
+            {/* Reutilizamos o mesmo componente <ComParametro /> passando valores diferentes via propriedades (props).
             Nota: Textos podem ir entre aspas ("João"), mas números e expressões JS vão entre chaves ({8.3}). */}
-        <ComParametro titulo="Aprendendo React" aluno="João" nota={8.3} />
-        <ComParametro titulo="Aprendendo React" aluno="Maria" nota={9.3} />
+            <ComParametro titulo="Aprendendo React" aluno="João" nota={8.3} />
+            <ComParametro titulo="Aprendendo React" aluno="Maria" nota={9.3} />
+        </Card>
 
-        {/* Renderiza o nosso primeiro componente funcional básico */}
-        <Primeiro />
+        <Card titulo="#02 - Primeiro Componente">
+            {/* Renderiza o nosso primeiro componente funcional básico */}
+            <Primeiro />
+        </Card>
+
+        <Card titulo="#01 - Criação de Tag">
+            {/* Interpola a constante `tag` definida acima usando chaves `{}` */}
+            {tag}
+        </Card>
     </div>
 );
 

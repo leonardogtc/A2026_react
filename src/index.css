@@ -1,7 +1,22 @@
 /* Seleciona a tag <body> da página inteira */
 body {
-    /* Define a cor de fundo da página (cinza escuro) */
-    background-color: #333;
-    /* Define a cor do texto (azul bem claro / quase branco) */
-    color: aliceblue;
+    /* Define a fonte padrão da página (importada do Google Fonts lá no public/index.html) */
+    font-family: Oswald;
+    /* Define a cor de fundo da página em código hexadecimal (#222 = cinza bem escuro / quase preto) */
+    background-color: #222;
+    /* Define a cor do texto em código hexadecimal (#fff = branco) */
+    color: #fff;
+    /* Centraliza os textos da página horizontalmente */
+    text-align: center;
+}
+
+/* Seleciona as tags de título <h1>, <h2> e <h3> de uma só vez (separadas por vírgula) */
+h1, h2, h3 {
+    /* Define o peso (espessura) da fonte como mais fino/leve (300 = Light; o padrão de títulos é 700 = Bold) */
+    font-weight: 300;
+}
+
+/* Seleciona as tags de título <h1>, <h2> e <h3> de uma só vez (separadas por vírgula) */
+h2, h3 {
+    margin: 0;
 }
