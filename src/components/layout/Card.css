@@ -2,29 +2,40 @@
 .Card {
     /* Define a cor de fundo do cartão (usada para destacar o cabeçalho e a borda) */
     background-color: tomato;
+    /* Define uma borda de 3px de espessura, linha contínua (solid) e cor vermelha (red) */
+    border: 3px solid red;
     /* Arredonda os 4 cantos do cartão em 10 pixels */
     border-radius: 10px;
     /* Esconde qualquer conteúdo filho que ultrapasse os limites do cartão
        (garante que o fundo branco de `.Content` não cubra os cantos arredondados de `.Card`) */
     overflow: hidden;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
+    /* Cria um espaçamento externo de 10px ao redor de cada cartão (para não ficarem colados uns nos outros) */
+    margin: 10px;
+
+    /* Ativa o Flexbox no cartão */
+    display: flex;
+    /* Muda a direção do Flexbox para coluna (empilha o `.Title` em cima e o `.Content` embaixo) */
+    flex-direction: column;
+    /* Define a largura máxima e mínima como 300px (fixando a largura de cada cartão em 300px) */
+    max-width: 300px;
+    min-width: 300px;
 }
 
 /* Seleciona o elemento com a classe `Title` que está DENTRO de um elemento com a classe `Card` */
 .Card .Title {
-    /* Espaçamento interno: 5px em cima/embaixo (vertical) e 0px na esquerda/direita (horizontal) */
+    /* Espaçamento interno: 10px em cima/embaixo (vertical) e 0px na esquerda/direita (horizontal) */
     padding: 10px 0px;
     /* Ativa o modelo de layout Flexbox para posicionar os elementos internos */
     display: flex;
     /* Centraliza o conteúdo do título horizontalmente no eixo principal do Flexbox */
     justify-content: center;
-
 }
 
 /* Seleciona o elemento com a classe `Content` que está DENTRO de um elemento com a classe `Card` */
 .Card .Content {
+    /* Faz a área de conteúdo crescer para ocupar todo o espaço vertical restante dentro do `.Card`
+       (assim, cartões na mesma linha ficam com o fundo branco preenchido até o final) */
+    flex-grow: 1;
     /* Define o fundo da área de conteúdo como branco (#fff) */
     background-color: #fff;
     /* Define a cor do texto dentro do conteúdo como preto (#000) para contrastar com o fundo branco */

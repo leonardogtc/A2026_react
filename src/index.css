@@ -8,15 +8,22 @@ body {
     color: #fff;
     /* Centraliza os textos da página horizontalmente */
     text-align: center;
+    /* Define o tamanho da fonte como 1.4 vezes o tamanho raiz do HTML (rem = root em, geralmente 1.4 * 16px) */
+    font-size: 1.4rem;
 }
 
 /* Seleciona as tags de título <h1>, <h2> e <h3> de uma só vez (separadas por vírgula) */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     /* Define o peso (espessura) da fonte como mais fino/leve (300 = Light; o padrão de títulos é 700 = Bold) */
     font-weight: 300;
 }
 
-/* Seleciona as tags de título <h1>, <h2> e <h3> de uma só vez (separadas por vírgula) */
-h2, h3 {
+/* Seleciona apenas as tags de subtítulo <h2> e <h3> */
+h2,
+h3 {
+    /* Remove a margem externa padrão que o navegador coloca nos títulos <h2> e <h3>,
+       deixando os cartões mais compactos e alinhados */
     margin: 0;
 }

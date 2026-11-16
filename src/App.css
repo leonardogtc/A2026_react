@@ -1,0 +1,9 @@
+/* Seleciona o container com a classe `Cards` que está dentro do componente `App` */
+.App .Cards {
+    /* Ativa o Flexbox para posicionar os cartões (.Card) lado a lado (em linha por padrão) */
+    display: flex;
+    /* Centraliza os cartões horizontalmente na tela */
+    justify-content: center;
+    /* Permite que os cartões quebrem para a linha de baixo quando não couberem todos na mesma linha */
+    flex-wrap: wrap;
+}
