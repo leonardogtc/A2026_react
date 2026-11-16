@@ -1,13 +1,7 @@
+/* Seleciona a tag <body> da página inteira */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    /* Define a cor de fundo da página (cinza escuro) */
+    background-color: #333;
+    /* Define a cor do texto (azul bem claro / quase branco) */
+    color: aliceblue;
 }
