@@ -1,9 +1,9 @@
 /* Seleciona o elemento que possui a classe `className="Card"` (o ponto `.` indica seletor de classe) */
 .Card {
-    /* Define a cor de fundo do cartão (usada para destacar o cabeçalho e a borda) */
-    background-color: tomato;
-    /* Define uma borda de 3px de espessura, linha contínua (solid) e cor vermelha (red) */
-    border: 3px solid red;
+    /* Define uma borda de 3px de espessura e linha contínua (solid).
+       Nota: A cor da borda (borderColor) e a cor de fundo (backgroundColor) foram removidas daqui
+       porque agora são definidas dinamicamente via JavaScript (`style={cardStyle}`) lá no Card.jsx! */
+    border: 3px solid;
     /* Arredonda os 4 cantos do cartão em 10 pixels */
     border-radius: 10px;
     /* Esconde qualquer conteúdo filho que ultrapasse os limites do cartão
@@ -16,9 +16,9 @@
     display: flex;
     /* Muda a direção do Flexbox para coluna (empilha o `.Title` em cima e o `.Content` embaixo) */
     flex-direction: column;
-    /* Define a largura máxima e mínima como 300px (fixando a largura de cada cartão em 300px) */
-    max-width: 300px;
-    min-width: 300px;
+    /* Define a largura máxima e mínima como 500px (fixando a largura de cada cartão em 500px) */
+    max-width: 500px;
+    min-width: 500px;
 }
 
 /* Seleciona o elemento com a classe `Title` que está DENTRO de um elemento com a classe `Card` */

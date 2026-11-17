@@ -32,8 +32,10 @@ export default () => (
         {/* Container `.Cards` que usa Flexbox (definido no App.css) para organizar todos os cartões lado a lado */}
         <div className="Cards">
             {/* Ao abrir e fechar `<Card> ... </Card>`, tudo o que colocamos DENTRO dele é passado automaticamente
-                para o componente Card através da propriedade especial `props.children`! */}
-            <Card titulo="#05 - Desafio Aleatório">
+                para o componente Card através da propriedade especial `props.children`!
+                Também podemos passar a propriedade opcional `color` (ex.: `color="#080"`) para definir a cor daquele cartão específico.
+                Se `color` não for passado nos outros `<Card>`, eles usarão a cor padrão definida lá no `Card.jsx`. */}
+            <Card titulo="#05 - Desafio Aleatório" color="#080">
                 {/* Passamos os parâmetros `min` e `max` via props para definir o intervalo do sorteio */}
                 <Aleatorio min={1} max={60} />
             </Card>
