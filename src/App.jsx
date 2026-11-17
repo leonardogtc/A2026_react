@@ -9,8 +9,11 @@ import Primeiro from './components/basicos/Primeiro';
 import ComParametro from './components/basicos/ComParametro';
 import Fragmento from './components/basicos/Fragmento';
 import Aleatorio from "./components/basicos/Aleatorio";
+
 // Importa o componente de layout `Card`, que cria a moldura visual de cartão para envolver os exercícios
 import Card from "./components/layout/Card";
+
+import Familia from "./components/basicos/Familia";
 
 // 4. Uma expressão JSX (semelhante ao HTML) pode ser armazenada em uma constante ou variável
 // e depois utilizada na renderização dentro de outro JSX usando chaves: `{tag}`.
@@ -31,6 +34,13 @@ export default () => (
 
         {/* Container `.Cards` que usa Flexbox (definido no App.css) para organizar todos os cartões lado a lado */}
         <div className="Cards">
+
+            <Card titulo="#06 - Componente com filhos" color="rgba(21, 116, 224, 1)">
+                {/* Passamos a propriedade `sobrenome` para o componente pai `<Familia />`,
+                    que por sua vez repassará esse sobrenome para os seus componentes filhos `<FamiliaMembro />` */}
+                <Familia sobrenome="Tavares" />
+            </Card>
+
             {/* Ao abrir e fechar `<Card> ... </Card>`, tudo o que colocamos DENTRO dele é passado automaticamente
                 para o componente Card através da propriedade especial `props.children`!
                 Também podemos passar a propriedade opcional `color` (ex.: `color="#080"`) para definir a cor daquele cartão específico.
