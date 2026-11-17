@@ -1,24 +1,22 @@
-// 1. Importa o React para habilitar o uso de JSX
-import React from "react";
+// 1. Importa o React e a função `cloneElement` (usada para clonar um elemento React adicionando novas propriedades a ele)
+import React, { cloneElement } from "react";
 
-// 2. Importa o componente filho `FamiliaMembro`
-import FamiliaMembro from "./FamiliaMembro";
-
-// 3. Cria e exporta o componente `Familia`, que recebe `props` vindas do `App.jsx` (ex.: `sobrenome`)
+// 2. Cria e exporta o componente `Familia`, que recebe `props` vindas do `App.jsx` (incluindo `sobrenome` e `children`)
 export default props => {
     return (
         <div>
-            {/* Forma 1 (Passagem explícita): pega especificamente a propriedade `props.sobrenome`
-                recebida pelo componente pai (`Familia`) e repassa para o filho (`FamiliaMembro`). */}
-            <FamiliaMembro nome="Leonardo" sobrenome={props.sobrenome} />
-
-            {/* Forma 2 (Operador Spread `...`): espalha (copia) TODAS as propriedades que `Familia`
-                recebeu em `props` e repassa automaticamente para `FamiliaMembro`. */}
-            <FamiliaMembro nome="Oliver" {...props} />
-
-            {/* Forma 3 (Valor fixo/literal): define o `sobrenome` diretamente como texto fixo ("Tavares"),
-                ignorando o que veio em `props.sobrenome`. */}
-            <FamiliaMembro nome="Lúcia" sobrenome="Tavares" />
+            {
+                // 3. Como repassar as propriedades do Pai (`Familia`) para múltiplos Filhos (`props.children`):
+                // - ATENÇÃO às letras maiúsculas/minúsculas:
+                //   * `React.Children` começa com "C" MAIÚSCULO (é o objeto utilitário do próprio React para lidar com elementos filhos).
+                //   * `props.children` começa com "c" MINÚSCULO (é a propriedade que guarda os filhos passados dentro de `<Familia>...</Familia>`).
+                // - `React.Children.map` percorre cada filho (`child`) dentro de `props.children`.
+                // - `cloneElement(child, props)` cria um clone daquele componente filho injetando nele todas as `props` do pai (como `sobrenome="Tavares"`).
+                React.Children.map(props.children, (child) => {
+                    return cloneElement(child, props);
+                })
+            }
         </div>
     );
 };
+

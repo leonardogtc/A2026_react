@@ -14,6 +14,7 @@ import Aleatorio from "./components/basicos/Aleatorio";
 import Card from "./components/layout/Card";
 
 import Familia from "./components/basicos/Familia";
+import FamiliaMembro from "./components/basicos/FamiliaMembro";
 
 // 4. Uma expressão JSX (semelhante ao HTML) pode ser armazenada em uma constante ou variável
 // e depois utilizada na renderização dentro de outro JSX usando chaves: `{tag}`.
@@ -36,9 +37,14 @@ export default () => (
         <div className="Cards">
 
             <Card titulo="#06 - Componente com filhos" color="rgba(21, 116, 224, 1)">
-                {/* Passamos a propriedade `sobrenome` para o componente pai `<Familia />`,
-                    que por sua vez repassará esse sobrenome para os seus componentes filhos `<FamiliaMembro />` */}
-                <Familia sobrenome="Tavares" />
+                {/* Passamos `sobrenome="Tavares"` apenas uma vez no componente pai `<Familia>`.
+                    Os componentes `<FamiliaMembro>` colocados aqui dentro vão para `props.children` de `Familia`,
+                    que usa `React.Children.map` + `cloneElement` para injetar o `sobrenome` em todos os filhos automaticamente! */}
+                <Familia sobrenome="Tavares da Conceição">
+                    <FamiliaMembro nome="Leonardo" />
+                    <FamiliaMembro nome="Oliver" />
+                    <FamiliaMembro nome="Lúcia" />
+                </Familia>
             </Card>
 
             {/* Ao abrir e fechar `<Card> ... </Card>`, tudo o que colocamos DENTRO dele é passado automaticamente
