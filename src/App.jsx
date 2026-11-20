@@ -5,6 +5,7 @@ import "./App.css";
 import React from "react";
 
 // 3. Importa os componentes filhos e de layout que serão exibidos dentro do componente principal App
+import ListaAlunos from './components/repeticao/ListaAlunos';
 import Primeiro from './components/basicos/Primeiro';
 import ComParametro from './components/basicos/ComParametro';
 import Fragmento from './components/basicos/Fragmento';
@@ -35,6 +36,10 @@ export default () => (
 
         {/* Container `.Cards` que usa Flexbox (definido no App.css) para organizar todos os cartões lado a lado */}
         <div className="Cards">
+
+            <Card titulo="#07 - Lista de Alunos" color="rgba(26,111,232,1">
+                <ListaAlunos></ListaAlunos>
+            </Card>
 
             <Card titulo="#06 - Componente com filhos" color="rgba(21, 116, 224, 1)">
                 {/* Passamos `sobrenome="Tavares"` apenas uma vez no componente pai `<Familia>`.
